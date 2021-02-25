@@ -6,35 +6,43 @@
 //
 
 import UIKit
+import RealmSwift
 
-class TableViewController: UITableViewController {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   
 
     // MARK: - Table view data source
 
-    let restaurantNames = [
-            "Burger Heroes", "Kitchen", "Bonsai", "Дастархан",
-            "Индокитай", "X.O", "Балкан Гриль", "Sherlock Holmes",
-            "Speak Easy", "Morris Pub", "Вкусные истории",
-            "Классик", "Love&Life", "Шок", "Бочка"
-        ]
+    var places: Results<Place>!
+    //var tableView : TableViewController
+    
+   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        places = realm.objects(Place.self)
 
         
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return restaurantNames.count
+        return places.isEmpty ? 0 : places.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        cell.nameLabel.text = restaurantNames[indexPath.row]
-        cell.imageOfPlace.image = UIImage(named: restaurantNames[indexPath.row])
+        let place = places[indexPath.row]
+        cell.nameLabel.text = place.name
+        cell.typeLabel.text = place.type
+        cell.locationLabel.text = place.location
+        cell.imageOfPlace.image = UIImage(data: place.imageData!)
+        
+
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height/2
         cell.imageOfPlace.clipsToBounds = true
 
@@ -42,21 +50,43 @@ class TableViewController: UITableViewController {
     }
     // MARK: - Table View Delegate
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85
     }
+    // MARK: - Table View Delegate
     
     
+     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (_, _, completionHandler) in
+            
+            let place = self.places[indexPath.row]
+            StorageManager.deleteObject(place)
+            tableView.deleteRows(at: [indexPath] , with: .automatic)
+            
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
     
     
-    /*
+  
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showDetails" {
+            guard let indexPath = tableView.indexPathForSelectedRow else {return}
+            let place = places[indexPath.row]
+            guard let currentPlaceVC = segue.destination as? NewPlaceTableViewController else {return}
+            currentPlaceVC.currentPlace = place
+        }
     }
-    */
-
+   
+    
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        guard let newPlaceVC = segue.source as? NewPlaceTableViewController else {return}
+        newPlaceVC.savePlace()
+     
+        tableView.reloadData
+        
+    }
+ 
 }
