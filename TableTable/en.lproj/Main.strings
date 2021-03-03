@@ -1,0 +1,39 @@
+
+/* Class = "UISegmentedControl"; 1Gm-w1-Fcu.segmentTitles[0] = "Date"; ObjectID = "1Gm-w1-Fcu"; */
+"1Gm-w1-Fcu.segmentTitles[0]" = "Date";
+
+/* Class = "UISegmentedControl"; 1Gm-w1-Fcu.segmentTitles[1] = "Name"; ObjectID = "1Gm-w1-Fcu"; */
+"1Gm-w1-Fcu.segmentTitles[1]" = "Name";
+
+/* Class = "UITextField"; placeholder = "Place name"; ObjectID = "314-zm-sbI"; */
+"314-zm-sbI.placeholder" = "Place name";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "7A6-hR-Okr"; */
+"7A6-hR-Okr.text" = "Name";
+
+/* Class = "UITextField"; placeholder = "Place type"; ObjectID = "CVx-Fm-a04"; */
+"CVx-Fm-a04.placeholder" = "Place type";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "Z53-Zx-27H"; */
+"Z53-Zx-27H.text" = "Type";
+
+/* Class = "UITextField"; placeholder = "Place location"; ObjectID = "bmQ-5T-kjq"; */
+"bmQ-5T-kjq.placeholder" = "Place location";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "cgF-V3-ERZ"; */
+"cgF-V3-ERZ.text" = "Name";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "g8x-EQ-NBm"; */
+"g8x-EQ-NBm.text" = "Location";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "oMn-Ng-UN0"; */
+"oMn-Ng-UN0.text" = "Location";
+
+/* Class = "UINavigationItem"; title = "New Place"; ObjectID = "rQo-rX-icg"; */
+"rQo-rX-icg.title" = "New Place";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "ral-sa-iUc"; */
+"ral-sa-iUc.title" = "Item";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "zsi-mI-NAk"; */
+"zsi-mI-NAk.text" = "Type";

@@ -12,14 +12,14 @@ import RealmSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let schemaVersion:UInt64 =  3
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let config = Realm.Configuration(
-            schemaVersion: 2, // Set the new schema version.
+            schemaVersion: schemaVersion, // Set the new schema version.
             migrationBlock: { migration, oldSchemaVersion in
-                if oldSchemaVersion < 1 {
+                if oldSchemaVersion < self.schemaVersion {
                     
                 }
                 
