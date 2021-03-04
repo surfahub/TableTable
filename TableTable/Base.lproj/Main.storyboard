@@ -173,11 +173,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="220" placeholderIntrinsicHeight="40" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Lv-hu-kIp" customClass="RatingControl" customModule="TableTable" customModuleProvider="target">
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="220" placeholderIntrinsicHeight="40" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0Lv-hu-kIp" customClass="RatingControl" customModule="TableTable" customModuleProvider="target">
                                                     <rect key="frame" x="97" y="50" width="220" height="40"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                            <integer key="value" value="4"/>
+                                                            <integer key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                                             <size key="value" width="40" height="40"/>
@@ -190,9 +190,6 @@
                                                 <constraint firstItem="0Lv-hu-kIp" firstAttribute="centerY" secondItem="SLC-I1-CCI" secondAttribute="centerY" id="fFJ-sO-2N5"/>
                                             </constraints>
                                             <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="0Lv-hu-kIp"/>
-                                                </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="VfS-gx-T13"/>
                                                     <exclude reference="fFJ-sO-2N5"/>
@@ -265,7 +262,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R4M-tT-28B">
-                                                    <rect key="frame" x="8" y="10" width="73" height="65"/>
+                                                    <rect key="frame" x="8" y="10" width="65" height="65"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="65" id="Mgd-6G-rk9"/>
                                                         <constraint firstAttribute="width" constant="65" id="SSE-aE-ngO"/>
@@ -288,49 +285,52 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starSize">
                                                             <real key="value" value="14"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="57" placeholderIntrinsicHeight="58" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" axis="vertical" distribution="fillProportionally" spacing="6" id="NId-it-f5h">
-                                                    <rect key="frame" x="89" y="13" width="57" height="58"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <stackView opaque="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="57" placeholderIntrinsicHeight="58" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="NId-it-f5h">
+                                                    <rect key="frame" x="81" y="13.5" width="227" height="58"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgF-V3-ERZ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="57" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cgF-V3-ERZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="227" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8x-EQ-NBm">
-                                                            <rect key="frame" x="0.0" y="24" width="57" height="15"/>
+                                                            <rect key="frame" x="0.0" y="24" width="227" height="15"/>
                                                             <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z53-Zx-27H">
-                                                            <rect key="frame" x="0.0" y="45" width="57" height="13"/>
+                                                            <rect key="frame" x="0.0" y="45" width="227" height="13"/>
                                                             <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <viewLayoutGuide key="safeArea" id="jeg-CK-SDY"/>
                                                     <constraints>
                                                         <constraint firstItem="Z53-Zx-27H" firstAttribute="top" secondItem="g8x-EQ-NBm" secondAttribute="bottom" constant="6" id="lja-f6-ISN"/>
-                                                        <constraint firstItem="g8x-EQ-NBm" firstAttribute="top" secondItem="cgF-V3-ERZ" secondAttribute="bottom" constant="6" id="nN8-fx-cvb"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="heR-x3-Hy5" firstAttribute="centerY" secondItem="Jxs-Ig-Cs3" secondAttribute="centerY" id="0qT-ad-Cva"/>
                                                 <constraint firstItem="NId-it-f5h" firstAttribute="leading" secondItem="R4M-tT-28B" secondAttribute="trailing" constant="8" id="2mZ-iI-led"/>
+                                                <constraint firstItem="heR-x3-Hy5" firstAttribute="leading" secondItem="NId-it-f5h" secondAttribute="trailing" constant="8" id="MrT-S1-xj8"/>
                                                 <constraint firstAttribute="trailing" secondItem="heR-x3-Hy5" secondAttribute="trailing" constant="8" id="SC1-wL-BrQ"/>
                                                 <constraint firstItem="R4M-tT-28B" firstAttribute="leading" secondItem="Jxs-Ig-Cs3" secondAttribute="leading" constant="8" id="ecr-Wc-2Cl"/>
                                                 <constraint firstItem="R4M-tT-28B" firstAttribute="top" secondItem="Jxs-Ig-Cs3" secondAttribute="top" constant="10" id="khL-dM-ZsB"/>
                                                 <constraint firstAttribute="trailing" secondItem="heR-x3-Hy5" secondAttribute="trailing" constant="8" id="pLb-mq-7hl"/>
                                                 <constraint firstAttribute="bottom" secondItem="R4M-tT-28B" secondAttribute="bottom" constant="10" id="piE-Lp-Pta"/>
+                                                <constraint firstItem="NId-it-f5h" firstAttribute="centerY" secondItem="Jxs-Ig-Cs3" secondAttribute="centerY" id="w4b-Ug-U3b"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cosmosView" destination="heR-x3-Hy5" id="WPv-dg-Vqc"/>
                                             <outlet property="imageOfPlace" destination="R4M-tT-28B" id="U6P-P9-lik"/>
                                             <outlet property="locationLabel" destination="g8x-EQ-NBm" id="RBe-OH-pMP"/>
                                             <outlet property="nameLabel" destination="cgF-V3-ERZ" id="s9d-0h-t5y"/>
@@ -412,6 +412,8 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="emptyStar" width="255" height="256"/>
+        <image name="filledStar" width="237.5" height="238"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
